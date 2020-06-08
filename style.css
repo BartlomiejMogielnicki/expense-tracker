@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #F7F7F7;
+}
+
+.container {
+    width: 400px;
+    margin: 80px auto;
+    padding: 30px 20px;
+    border: 1px solid rgba(0, 0, 0, .3);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.balance {
+    font-size: 2.2em;
+}
+
+.inc-exp-container {
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, .3);
+    margin: 20px 0;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
+}
+
+.inc-exp-container div {
+    text-align: center;
+    text-transform: uppercase;
+    flex-grow: 1;
+    padding: 15px 0;
+}
+
+.inc-exp-container div:first-of-type {
+    border-right: 1px solid rgba(0, 0, 0, .3);
+}
+
+.money {
+    padding: 3px;
+    font-size: 1.4em;
+}
+
+.money.income {
+    color: rgb(1, 167, 1);
+}
+
+.money.expense {
+    color: rgb(194, 0, 0);
+}
+
+.history {
+    margin: 30px 0;
+}
+
+.title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+.list li {
+    list-style: none;
+    padding: 10px;
+    margin: 10px 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, .3);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
+}
+
+.list li:hover .delete-btn {
+    opacity: 1;
+}
+
+.list li.expense {
+    border-right: 5px solid red;
+}
+
+.list li.income {
+    border-right: 5px solid green;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    padding: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 3px;
+    transition: .3s;
+    opacity: 0;
+}
+
+input:focus,
+button:focus {
+    outline: 0;
+}
+
+.form-control {
+    margin: 20px 0;
+}
+
+input,
+.add-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 1em;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 5px;
+}
+
+.add-btn {
+    background-color: #9C88FF;
+    color: white;
+    cursor: pointer;
+}
