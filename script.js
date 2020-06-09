@@ -6,30 +6,10 @@ const form = document.getElementById('form');
 const addText = document.getElementById('text');
 const addAmount = document.getElementById('amount');
 
-// Temporary data
-const fakeTransactions = [{
-        id: 1,
-        text: 'Bills',
-        amount: -500
-    },
-    {
-        id: 2,
-        text: 'Salary',
-        amount: 1200
-    },
-    {
-        id: 3,
-        text: 'TV',
-        amount: -250
-    },
-    {
-        id: 4,
-        text: 'Fuel',
-        amount: -100
-    }
-];
+// Get data from local storage
+const localStorageTransactions = JSON.parse(localStorage.getItem('transactions'));
 
-let transactions = fakeTransactions;
+let transactions = localStorage.getItem('transactions') !== null ? localStorageTransactions : [];
 
 // Get new id
 const getID = () => {
@@ -51,12 +31,12 @@ const addTransaction = (e) => {
     transactions.push(transaction);
     addTransactionDOM(transaction);
     updateValues();
+    updateLocalStorage();
 
     // Clear inputs
     addText.value = "";
     addAmount.value = "";
 }
-
 
 // Add transactions to DOM
 const addTransactionDOM = (transaction) => {
@@ -101,6 +81,12 @@ const updateValues = () => {
 const removeTransaction = (id) => {
     transactions = transactions.filter(transaction => transaction.id !== id);
     init();
+    updateLocalStorage();
+}
+
+// Update local storage
+const updateLocalStorage = () => {
+    localStorage.setItem('transactions', JSON.stringify(transactions));
 }
 
 // Init app
